@@ -10,17 +10,18 @@ class MemoryGame {
 
   shuffleCards(cards) {
     // ... write your code here
-    if (!cards) return undefined;
-    let i = cards.length;
-    let k = 0;
-    let tmp = 0;
-    while (--i > 0) {
-      k = Math.floor(Math.random() * (i + 1));
-      tmp = cards[k];
-      cards[k] = cards[i];
-      cards[i] = tmp;
+    if (!this.cards) return undefined;
+    let m = this.cards.length, t, i;
+    // While there remain elements  toshuffle…
+    while (m) {
+      // Pick a remaining element…
+      i = Math.floor(Math.random() * m--);
+      // And swap it with the current element.
+      t = this.cards[m];
+      this.cards[m] = this.cards[i];
+      this.cards[i] = t;
     }
-    return cards;
+    return this.cards;
   }
 
 
