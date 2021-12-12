@@ -1,4 +1,4 @@
-class MemoryGame {
+export default class MemoryGame {
   constructor(cards) {
     this.cards = cards;
     this.pickedCards = [];
@@ -38,7 +38,10 @@ class MemoryGame {
     // ... write your code here
     if (this.pairsGuessed < (this.cards.length / 2)) {
       return false;
-    } else return true;
+    } else if (this.pairsGuessed === this.cards.length / 2) {
+      alert('You won the game !');
+      return true;
+    }
   }
 }
 
